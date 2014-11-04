@@ -1,6 +1,6 @@
 require 'rails_helper' 
 
-context "user not  signed in and on the homepage" do 
+context "user not signed in and on the homepage" do 
 
 	it "should see a 'sign in' link and a 'sign up' link" do 
 		visit ('/')
@@ -25,12 +25,8 @@ end
 context "user signed in on the homepage" do
 
   before do
-    visit('/')
-    click_link('Sign up')
-    fill_in('Email', with: 'test@example.com')
-    fill_in('Password', with: 'testtest')
-    fill_in('Password confirmation', with: 'testtest')
-    click_button('Sign up')
+    test_user = User.create(email: "sean@makers.com", password: "12345678", password_confirmation: "12345678")
+    login_as test_user
   end
 
   it "should see 'sign out' link" do
@@ -45,6 +41,7 @@ context "user signed in on the homepage" do
   end
 
 
-
 end
+
+
 
