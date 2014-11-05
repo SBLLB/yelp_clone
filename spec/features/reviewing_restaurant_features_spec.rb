@@ -21,7 +21,13 @@ describe 'When reviewing a restaurant' do
 		end
 
 		it 'a user can only leave one review per restaurant' do
-
+			visit '/restaurants'
+			click_link 'Review Bills Cafe'
+			fill_in "Thoughts", with: "So so"
+			select '3', from: 'Rating'
+			click_button 'Leave Review'
+			visit '/restaurants'
+			click_link 'Review Bills Cafe'
 		end
 
 	end
