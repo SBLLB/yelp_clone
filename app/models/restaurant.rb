@@ -5,4 +5,8 @@ class Restaurant < ActiveRecord::Base
 	validates :name, length: {minimum: 3}
 	belongs_to :user
 
+	def has_been_reviewed_by?(user)
+		reviews.find_by user: (user)
+	end
+
 end
