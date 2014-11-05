@@ -45,7 +45,6 @@ describe 'When deleting a review of a restaurant' do
 			expect(page).not_to have_content('Delete Review')
 		end
 
-
 	end
 
 
