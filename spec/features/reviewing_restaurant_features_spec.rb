@@ -32,12 +32,6 @@ describe 'When reviewing a restaurant' do
 
 	end
 
-	context 'when deleting a review of a restaurant' do
-
-		it 'a user can only delete a review they authored' do
-
-		end
-
-	end
+	
 
 end
