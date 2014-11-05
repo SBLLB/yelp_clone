@@ -9,4 +9,8 @@ class Restaurant < ActiveRecord::Base
 		reviews.find_by user: (user)
 	end
 
+	def average_rating
+		"N/A"
+	end
+
 end
