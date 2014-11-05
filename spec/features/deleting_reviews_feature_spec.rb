@@ -36,4 +36,17 @@ describe 'When deleting a review of a restaurant' do
 
 	end
 
+	context ' a user who has NOT authored the review' do 
+		
+		it 'cannot see a link to delete the review ' do
+			Review.create(thoughts: 'test review thought', rating: 3, restaurant_id: 1)
+			visit '/restaurants'
+			expect(page).to have_content('test review thought')
+			expect(page).not_to have_content('Delete Review')
+		end
+
+
+	end
+
+
 end
