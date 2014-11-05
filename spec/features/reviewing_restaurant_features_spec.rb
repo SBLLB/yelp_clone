@@ -27,7 +27,7 @@ describe 'When reviewing a restaurant' do
 			select '3', from: 'Rating'
 			click_button 'Leave Review'
 			visit '/restaurants'
-			click_link 'Review Bills Cafe'
+			expect(page).not_to have_content('Review Bills Cafe')
 		end
 
 	end
