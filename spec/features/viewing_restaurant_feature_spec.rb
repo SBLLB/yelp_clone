@@ -38,21 +38,21 @@ describe 'Viewing restaurants:' do
 		end
 	end
 
-	# context 'average ratings' do 
+	context 'average ratings' do 
 		
-	# 	before do
-	# 		Restaurant.create(name: 'KFC', id: 1)
-	# 		Review.create(thoughts: 'test review thought 1', rating: 3, restaurant_id: 1, user_id: 1)
-	# 		Review.create(thoughts: 'test review thought 2', rating: 5, restaurant_id: 1, user_id: 2)
-	# 	end
+		before do
+			Restaurant.create(name: 'KFC', id: 1)
+			Review.create(thoughts: 'test review thought 1', rating: 3, restaurant_id: 1, user_id: 1)
+			Review.create(thoughts: 'test review thought 2', rating: 5, restaurant_id: 1, user_id: 2)
+		end
 
-	# 	it 'displays an average rating for all reviews' do
-	# 	  	visit '/restaurants'
-	# 	  	expect(page).to have_content("test review thought 1")
-	# 		expect(page).to have_content("Average rating: 4")
-	# 	end
+		it 'displays an average rating for all reviews' do
+		  	visit '/restaurants'
+		  	expect(page).to have_content("test review thought 1")
+			expect(page).to have_content("Average Rating: 4")
+		end
 
-	# end
+	end
 
 end
 
