@@ -49,7 +49,7 @@ describe 'Viewing restaurants:' do
 		it 'displays an average rating for all reviews' do
 		  	visit '/restaurants'
 		  	expect(page).to have_content("test review thought 1")
-			expect(page).to have_content("Average Rating: 4")
+			expect(page).to have_content("Average rating: ★★★★☆")
 		end
 
 	end

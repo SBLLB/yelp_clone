@@ -12,7 +12,8 @@ class ReviewsController < ApplicationController
 		if @review.save
 			redirect_to '/restaurants'
 		else
-			render 'new'
+			flash[:notice] = "You've already reviewed this restaurant"
+			redirect_to '/restaurants'
 		end
 
 	end
