@@ -14,6 +14,10 @@ describe ReviewsHelper, :type => :helper  do
 		it 'displays three black stars and two white for rating of 3' do 
 			expect(helper.star_rating(3)).to eq('★★★☆☆')
 		end
+
+		it 'displays the correct number of stars for a float average rating' do 
+			expect(helper.star_rating(3.5)).to eq('★★★★☆')
+		end
 	end
 
 end	
