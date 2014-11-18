@@ -1,8 +1,9 @@
 class EndorsementsController < ApplicationController
+	
 	def create
-		@review = Review.find(params[:id])
-		@review.endorsement.create
-		redirect_to restaurants_path
+		@review = Review.find(params[:review_id])
+		@review.endorsements.create
+		render json: {new_endorsement_count: @review.endorsements.count}, js: "window.location.pathname='restaurants_path'"
 	end 
 
 end
