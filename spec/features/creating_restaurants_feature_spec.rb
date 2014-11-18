@@ -46,8 +46,6 @@ describe 'When creating a restaurant' do
 		      	click_link 'Add a restaurant'
 		      	fill_in 'Name', with: 'McQueens'
 		      	attach_file 'Image', Rails.root.join(Rails.root, 'public', 'images', 'tester.png')
-
-		      	# post "/Choose File/", "file" => Rack::Test::UploadedFile.new("app/public/images/tester.png", "mime/type")
 		      	click_button 'Create Restaurant'
 		      	expect(page).to have_content('McQueens')
 			end 
