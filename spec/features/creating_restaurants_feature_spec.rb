@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe 'When creating a restaurant' do 
 
+	include Rack::Test::Methods
+
 	before do
 	 	test_user = User.create(email: "sean@makers.com", password: "12345678", password_confirmation: "12345678")
 		login_as test_user
@@ -28,6 +30,22 @@ describe 'When creating a restaurant' do
 				expect(page).not_to have_css 'h2', text: 'kf'
 				expect(page).to have_content 'error'
 			end
+		end
+
+		context 'and uploading a restaurant image' do 
+			it 'if no image is provided, use default' do
+		      visit '/restaurants'
+		      click_link 'Add a restaurant'
+		      fill_in 'Name', with: 'Polpo'
+		      click_button 'Create Restaurant'
+		      expect(page).to have_selector("img[src$='missing.png']")
+			end
+
+			it 'if an image is provided, display that' do 
+				
+			end 
+
+
 		end
 		
 	end

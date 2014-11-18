@@ -1,4 +1,5 @@
 class RestaurantsController < ApplicationController
+
 	before_action :authenticate_user!, :except => [:index, :show]
 
 	def index
@@ -48,7 +49,7 @@ class RestaurantsController < ApplicationController
 	private
 
 	def restaurant_params
-		params[:restaurant].permit(:name)
+		params[:restaurant].permit(:name, :image)
 	end
 
 end

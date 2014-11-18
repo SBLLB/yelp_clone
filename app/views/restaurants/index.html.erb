@@ -4,6 +4,7 @@
 	<% @restaurants.each do |restaurant| %>
 		<h2> <%= link_to "#{restaurant.name}", restaurant_path(restaurant) %> </h2>
 		<h3>Average Rating: <%= star_rating(restaurant.average_rating) %> </h3>
+		<p><%= image_tag restaurant.image.url(:thumb) %></p>
 		<% if restaurant.reviews.any? %>
 			<ul>
 				<% restaurant.reviews.each do |review| %>
@@ -19,8 +20,8 @@
 					</li> 
 				<% end %>
 			</ul>
-			<% else %>
-				<p> No Reviews </p>
+		<% else %>
+			<p> No Reviews </p>
 		<% end %>
 
 		<% if current_user == restaurant.user %>

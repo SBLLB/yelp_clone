@@ -28,6 +28,7 @@ gem 'spring',        group: :development
 
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'paperclip'
 
 
 # Use ActiveModel has_secure_password
