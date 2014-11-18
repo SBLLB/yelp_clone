@@ -42,7 +42,14 @@ describe 'When creating a restaurant' do
 			end
 
 			it 'if an image is provided, display that' do 
-				
+     			 visit '/restaurants'
+		      	click_link 'Add a restaurant'
+		      	fill_in 'Name', with: 'McQueens'
+		      	# click_link "Choose File"
+		      	attach_file "Choose File", '/public/images/tester.png'
+		      	# post "/Choose File/", "file" => Rack::Test::UploadedFile.new("app/public/images/tester.png", "mime/type")
+		      	click_button 'Create Restaurant'
+		      	expect(page).to have_selector("img[src$='tester.png']")
 			end 
 
 
